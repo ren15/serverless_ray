@@ -7,7 +7,7 @@ Goal of this project:
 - serverless
 - parallel 
 - DAG
-- edge computing
+- edge computing/ local testing
 
 
 ## Code sample
