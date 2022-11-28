@@ -4,6 +4,10 @@ Goal of this project:
 - Provide a similar interface for serverless computing, just like using ray
 - Similar to what modal.com did.
 - Leverage AWS lambda, and K8s
+- serverless
+- parallel 
+- DAG
+- edge computing
 
 
 ## Code sample
@@ -44,6 +48,19 @@ impl Alpha{
     }
 }
 ```
+
+We also need "deserialization" or "static reflection", i.e.
+```rust
+fn cal(name:String){
+    match name{
+        "f1" => f1(open,close),
+        "f2" => f2(open,close),
+        "f3" => f3(f1,f2),
+    }
+}
+```
+
+In rust, we also need high-performance tensor framework. Such as openmp binding, or mkl binding.
 
 The framework should automatically reason that f3 depend on f1 and f2,
 and issue error when there is a cycle or infeasible node.
